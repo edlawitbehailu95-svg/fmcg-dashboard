@@ -6,15 +6,16 @@ function CustomerList() {
   useEffect(() => {
     fetch("/api/churn")
       .then(res => res.json())
-      .then(data => setCustomers(Object.values(data).filter(c => c !== null)))
+      .then(data => {
+        const arr = Object.values(data).filter(c => c !== null);
+        setCustomers(arr);
+      })
       .catch(err => console.error("Error fetching churn data:", err));
   }, []);
 
   return (
     <div className="card mb-4">
-      <div className="card-header bg-gradient bg-primary text-white fs-4 fw-bold">
-        📋 Customer List
-      </div>
+      <div className="card-header bg-dark text-white">📋 Customer List</div>
       <div className="card-body">
         <table className="table table-striped table-hover">
           <thead className="table-dark">

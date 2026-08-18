@@ -11,8 +11,7 @@ function DashboardHome() {
     dormant: 0,
     revenue: 0,
   });
-
-  useEffect(() => {
+useEffect(() => {
     fetch("/api/churn")
       .then(res => res.json())
       .then(data => {
@@ -32,6 +31,8 @@ function DashboardHome() {
       })
       .catch(err => console.error("Error fetching summary:", err));
   }, []);
+
+  
 
   const pieData = [
     { name: "Active", value: summary.active },

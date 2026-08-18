@@ -12,9 +12,7 @@ function ReorderQueue() {
 
   return (
     <div className="card mb-4">
-      <div className="card-header bg-gradient bg-warning text-dark fs-4 fw-bold">
-        📦 Reorder Queue
-      </div>
+      <div className="card-header bg-primary text-white">📦 Reorder Queue</div>
       <div className="card-body">
         <table className="table table-striped table-hover">
           <thead className="table-dark">
@@ -50,6 +48,3 @@ function ReorderQueue() {
 }
 
 export default ReorderQueue;
-
-
-

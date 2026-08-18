@@ -8,7 +8,10 @@ function RevenueTrends() {
     fetch("/api/revenue-trends")
       .then(res => res.json())
       .then(trends => {
-        const arr = Object.entries(trends).map(([month, revenue]) => ({ month, revenue }));
+        const arr = Object.entries(trends).map(([month, revenue]) => ({
+          month,
+          revenue,
+        }));
         setData(arr);
       })
       .catch(err => console.error("Error fetching revenue trends:", err));
@@ -16,10 +19,8 @@ function RevenueTrends() {
 
   return (
     <div className="card mb-4">
-      <div className="card-header bg-gradient bg-success text-white fs-4 fw-bold">
-        💹 Revenue Trends
-      </div>
-      <div className="card-body d-flex justify-content-center">
+      <div className="card-header bg-success text-white">💹 Revenue Trends</div>
+      <div className="card-body">
         <LineChart width={600} height={300} data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="month" />
@@ -34,4 +35,3 @@ function RevenueTrends() {
 }
 
 export default RevenueTrends;
-
