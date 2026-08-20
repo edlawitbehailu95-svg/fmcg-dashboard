@@ -27,6 +27,10 @@ function DeliveryPlan() {
                   <span className={`badge bg-${c.risk === "Low Risk" ? "success" : c.risk === "Medium Risk" ? "warning" : "danger"}`}>
                     {c.risk}
                   </span>
+                   <span className="badge bg-secondary">
+                      {c.delivery_date}
+                    </span>
+                    
                 </li>
               ))}
             </ul>
